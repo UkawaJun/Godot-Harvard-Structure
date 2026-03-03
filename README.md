@@ -43,9 +43,19 @@
 
 ## ⚙️ 组件化架构与二次开发 / Component Architecture & Secondary Development
 
-为了方便后续扩展新的电路元件，我设计了一套“数据与逻辑分离”的基类模板。每一个逻辑元件在节点树中被严格拆分为四个层级：`in`（存放输入引脚，可通过编辑器直接增删改变接口数）、`out`（存放输出引脚）、`obj`（存放外观模型，如开关或灯泡）以及 `core`（挂载基础数据读取与移动交互脚本）。
+为了方便后续扩展新的电路元件，我设计了一套“数据与逻辑分离”的基类模板。每一个逻辑元件在节点树中被严格拆分为四个层级：`in`（存放输入引脚，可通过编辑器直接增删改变接口数）、`out`（存放输出引脚）、`obj`（存放外观模型，如开关或灯泡）以及 `core`（挂载基础数据读取与移动交互脚本）。基于这套结果可以衍生出各种基础的门电路的功能，以及自定义的功能，用于后期包装玩家自制的集成电路的计算过程。
 
-To facilitate the future expansion of new circuit components, I designed a base class template that separates data from logic. Each logic component is strictly divided into four levels in the node tree: `in` (stores input pins; the number of interfaces can be changed directly in the editor), `out` (stores output pins), `obj` (stores appearance models, like switches or bulbs), and `core` (mounts basic data reading and movement interaction scripts).
+To facilitate the future extension of new circuit components, I designed a set of base class templates that follow the principle of "separation of data and logic." Each logic element in the node tree is strictly divided into four layers: 
+
+  1.`in `(for input pins, where the number of interfaces can be directly added or removed via the editor), 
+
+  2.`out `(for output pins),
+  
+  3.`obj `(for appearance models, such as switches or bulbs),
+
+  4.`core `(which hosts basic data reading and movement interaction scripts). 
+
+Based on this structure, various basic gate circuit functions can be derived, as well as custom functionalities for later packaging the computational processes of player-made integrated circuits.
 
 <div align="center">
 
