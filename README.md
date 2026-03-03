@@ -7,7 +7,8 @@
 
 **开发周期 / Development Period:** 2023.11 - 2024.03
 
-[![实机演示全景 / Gameplay Overview](预留全景图链接_替换这里.png)](你的视频或项目链接)
+[![实机演示全景 / Gameplay Overview](https://github.com/user-attachments/assets/dacef36c-b4d3-492a-b1f3-212ce95628e8)](你的视频或项目链接)
+
 
 *这是一个由我独立开发的三维逻辑电路沙盒，重点实现了逻辑节点的组件化拆分、动态 3D 连线生成以及空间交互功能。*
 *This is a 3D logic circuit sandbox I developed independently, focusing on componentized node splitting, dynamic 3D wiring generation, and spatial interaction.*
