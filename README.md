@@ -49,8 +49,9 @@ To facilitate the future expansion of new circuit components, I designed a base 
 
 <div align="center">
 
+
 *(💡 提示：这里放一张整体架构逻辑的宽图)*
-<img src="预留你的流程图链接_替换这里.png" width="800" alt="核心架构流程图 / Core Architecture Flowchart">
+<img src="https://github.com/user-attachments/assets/69d56312-2404-4b51-8935-a42b1dfca132" width="800" alt="核心架构流程图 / Core Architecture Flowchart">
 
 | 场景节点层级结构 / Scene Node Hierarchy | 核心组件代码挂载 / Core Component Scripts |
 | :---: | :---: |
