@@ -31,9 +31,10 @@
 
 | 动态连线与虚线跟随 / Dynamic Wiring & Dashed Follow | 场景内3D操作轴 / In-Scene 3D Gizmos |
 | :---: | :---: |
-| <img src="替换为连线截图链接.png" width="400"> | <img src="替换为红蓝绿轴截图链接.png" width="400"> |
+| <img src="https://github.com/user-attachments/assets/525f9fba-8978-45c6-917f-50b50e756df8" width="400"> | <img src="https://github.com/user-attachments/assets/2fedd3a9-6256-4c0b-bba4-1ad3ec5a483f" width="400"> |
 | **信号传递与材质反馈 / Signal & Material Feedback** | **多样化的派生节点 / Diverse Derived Nodes** |
-| <img src="替换为发光电路截图链接.png" width="400"> | <img src="替换为你的电路板并排展示截图.png" width="400"> |
+| <img src="https://github.com/user-attachments/assets/67f5dabc-06e6-4963-bab0-b4f2243d2c73" width="400"> | <img src="https://github.com/user-attachments/assets/f7b38edb-471a-40a5-b526-a3b685589e94" width="400"> |
+
 
 </div>
 
