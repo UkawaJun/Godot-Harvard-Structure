@@ -2,17 +2,15 @@
 
 <div align="center">
 
-# Harvard Structure: 3D Interactive Logic Circuit Simulator
-### 哈佛结构：3D交互式逻辑电路模拟器
+# Harvard Structure
+### 3D Interactive Logic Circuit Simulator / 3D交互式逻辑电路模拟器
 
 **开发周期 / Development Period:** 2023.11 - 2024.03
 
-[![实机演示全景 / Gameplay Overview](https://github.com/user-attachments/assets/bfa3d733-ee33-438d-93c4-96e6ebe3995b)](你的视频或项目链接)
+[![实机演示全景 / Gameplay Overview](预留全景图链接_替换这里.png)](你的视频或项目链接)
 
-
-
-*这是我独立开发的一个三维逻辑电路沙盒，重点实现了节点的组件化拆分、3D连线生成以及空间交互功能。*
-*This is a 3D logic circuit sandbox I developed independently, focusing on componentized node splitting, 3D wiring generation, and spatial interaction.*
+*这是一个由我独立开发的三维逻辑电路沙盒，重点实现了逻辑节点的组件化拆分、动态 3D 连线生成以及空间交互功能。*
+*This is a 3D logic circuit sandbox I developed independently, focusing on componentized node splitting, dynamic 3D wiring generation, and spatial interaction.*
 
 </div>
 
@@ -20,27 +18,21 @@
 
 ## 💡 项目简介 / Brief Introduction
 
-“Harvard Structure” 是我基于 Godot 引擎（GDScript）编写的 3D 节点式电路模拟器。
-"Harvard Structure" is a 3D node-based circuit simulator I wrote using the Godot Engine (GDScript).
+“Harvard Structure” 是我基于 Godot 引擎（GDScript）开发的一款 3D 节点式电路模拟器。为了在三维空间中自由拼装电路，我在场景中实现了一套基于两点间线性插值的动态线路生成方案。同时，我为逻辑元件设计了一套高复用率的继承结构，这使得我可以非常方便地挂载新代码，衍生出诸如“与门”、“或门”等不同功能和外观的逻辑电路板。
 
-为了在三维空间中拼装电路，我没有使用引擎自带的连线工具，而是自己写了一套基于两点间线性插值的线路生成方案。
-To assemble circuits in 3D space, instead of using the engine's built-in wiring tools, I wrote a line generation solution based on linear interpolation between two points.
-
-同时，我为逻辑元件设计了一套高复用率的继承结构，方便我随时挂载新代码，开发出如“与门”、“或门”等不同功能的电路板。
-Meanwhile, I designed a highly reusable inheritance structure for the logic components, allowing me to easily attach new code and develop circuit boards with different functions, such as "AND gates" and "OR gates".
+"Harvard Structure" is a 3D node-based circuit simulator I developed using the Godot Engine (GDScript). To assemble circuits freely in 3D space, I implemented a dynamic line generation solution based on linear interpolation between two points. Additionally, I designed a highly reusable inheritance structure for the logic components. This allows me to easily attach new scripts and derive logic circuit boards with various functions and appearances, such as "AND" and "OR" gates.
 
 ---
 
 <div align="center">
   
 ### 📸 核心系统展示 / Core Systems Gallery
-*(2x2 Grid View)*
 
-| 动态连线与虚线优化 / Dynamic Wiring & Dashed Optimization | 场景内3D操作轴 / In-Scene 3D Gizmos |
+| 动态连线与虚线跟随 / Dynamic Wiring & Dashed Follow | 场景内3D操作轴 / In-Scene 3D Gizmos |
 | :---: | :---: |
 | <img src="替换为连线截图链接.png" width="400"> | <img src="替换为红蓝绿轴截图链接.png" width="400"> |
-| **信号传递与材质反馈 / Signal & Material Feedback** | **组件化节点树 / Componentized Node Tree** |
-| <img src="替换为发光电路截图链接.png" width="400"> | <img src="替换为节点目录截图链接.png" width="400"> |
+| **信号传递与材质反馈 / Signal & Material Feedback** | **多样化的派生节点 / Diverse Derived Nodes** |
+| <img src="替换为发光电路截图链接.png" width="400"> | <img src="替换为你的电路板并排展示截图.png" width="400"> |
 
 </div>
 
@@ -48,86 +40,51 @@ Meanwhile, I designed a highly reusable inheritance structure for the logic comp
 
 ## ⚙️ 组件化架构与二次开发 / Component Architecture & Secondary Development
 
+为了方便后续扩展新的电路元件，我设计了一套“数据与逻辑分离”的基类模板。每一个逻辑元件在节点树中被严格拆分为四个层级：`in`（存放输入引脚，可通过编辑器直接增删改变接口数）、`out`（存放输出引脚）、`obj`（存放外观模型，如开关或灯泡）以及 `core`（挂载基础数据读取与移动交互脚本）。
+
+To facilitate the future expansion of new circuit components, I designed a base class template that separates data from logic. Each logic component is strictly divided into four levels in the node tree: `in` (stores input pins; the number of interfaces can be changed directly in the editor), `out` (stores output pins), `obj` (stores appearance models, like switches or bulbs), and `core` (mounts basic data reading and movement interaction scripts).
+
 <div align="center">
-  
-*(此处预留给你插入核心架构流程图的位置)*
-<img src="预留你的流程图链接_替换这里.png" width="700" alt="核心架构流程图 / Core Architecture Flowchart">
+
+*(💡 提示：这里放一张整体架构逻辑的宽图)*
+<img src="预留你的流程图链接_替换这里.png" width="800" alt="核心架构流程图 / Core Architecture Flowchart">
+
+| 场景节点层级结构 / Scene Node Hierarchy | 核心组件代码挂载 / Core Component Scripts |
+| :---: | :---: |
+| <img src="替换为那张引脚、in、out、core的目录截图.png" width="380"> | <img src="替换为那张一堆与非门文件目录的截图.png" width="380"> |
 
 </div>
 
-为了方便后续扩展新的电路板，我设计了一套类似“数据与逻辑分离”的基类模板。
-To facilitate the future expansion of new circuit boards, I designed a base class template similar to "separation of data and logic".
+基于这套结构的二次开发非常便捷。当我需要制作一个新的逻辑门（例如“与非门”）时，只需复制这个基类，设定好输入输出的数量，然后在 `core` 节点下新建一个脚本写入具体的逻辑判别代码即可，完全无需重写移动和连线等底层代码。
 
-我将每一个逻辑元件在节点树中严格拆分为四个层级：
-I strictly split each logic component into four levels within the node tree:
-
-1. **`in` (输入) & `out` (输出)**：用于存放引脚节点，我可以通过在编辑器里增加或删除子节点，直接改变电路板的接口数量。
-1. **`in` (Inputs) & `out` (Outputs)**: Used to store pin nodes. I can directly change the number of interfaces on the board by adding or removing child nodes in the editor.
-
-2. **`obj` (物件)**：存放具体的外观模型，比如开关按钮或灯泡。
-2. **`obj` (Objects)**: Stores specific appearance models, such as switch buttons or light bulbs.
-
-3. **`core` (核心)**：挂载基础的数据读取（`basic_is`）和移动交互脚本（`NodeMove_is`）。
-3. **`core` (Core)**: Mounts basic data reading (`basic_is`) and movement interaction scripts (`NodeMove_is`).
-
-**基于这套结构的二次开发非常简单：**
-**Secondary development based on this structure is very simple:**
-
-当我需要制作一个新的“与非门”时，我只需要复制这个基类，设定好输入输出的数量，然后在 `core` 下面新建一个脚本写入与非逻辑即可，不需要重写移动和连线代码。
-When I need to make a new "NAND gate", I just copy this base class, set the number of inputs and outputs, and then create a new script under `core` to write the NAND logic, without needing to rewrite the movement and wiring code.
+Secondary development based on this structure is extremely convenient. When I need to create a new logic gate (e.g., a "NAND gate"), I simply copy the base class, set the required number of inputs and outputs, and attach a new script under the `core` node to write the specific logic evaluation. There is absolutely no need to rewrite the underlying code for movement and wiring.
 
 ---
 
-## 🛠 开发细节与实际功能 / Development Details & Actual Features
+## 🛠 开发细节与系统机制 / Development Details & System Mechanics
 
-### 1. 动态连线与移动防卡顿优化 / Dynamic Wiring & Anti-Lag Optimization
+### 1. 动态连线与防卡顿优化 / Dynamic Wiring & Anti-Lag Optimization
 
-在线路的生成上，我会获取起点和终点的坐标，计算出总距离，然后通过线性插值生成一系列的点。
-For line generation, I get the coordinates of the start and end points, calculate the total distance, and generate a series of points through linear interpolation.
+在线路的生成上，程序会获取起终点坐标计算总距离，并通过线性插值生成一系列点。接着在这些点上实例化网格模型，利用反正切函数计算向量角度，使其旋转并首尾相连。为了解决拖拽电路板时实时生成完整线路导致的卡顿问题，我在移动状态下加大了插值生成的间距，使连线呈现出“虚线”的跟随效果。当松开鼠标停止移动后，程序才会重新生成高密度的完整实体线。
 
-接着，我会在这些点上实例化网格模型，并利用反正切函数计算向量角度，让这些模型旋转并首尾相连。
-Then, I instantiate mesh models on these points and use arctangent functions to calculate vector angles, rotating these models to connect them end-to-end.
-
-**移动优化：** 如果在拖拽电路板时实时生成完整的线，程序会非常卡顿。
-**Movement Optimization:** If complete lines are generated in real-time while dragging a circuit board, the program will lag significantly.
-
-因此我在移动状态下加大了插值生成的间距（`lds = dis/20`），此时连线只显示部分网格，呈现一种“虚线”的跟随效果。当松开鼠标停止移动后，程序才会重新生成高密度的完整实体线。
-Therefore, I increased the interpolation spacing during the moving state (`lds = dis/20`), so the connection only shows partial meshes, presenting a "dashed" follow effect. The program only regenerates the complete, high-density solid line after I release the mouse and stop moving.
+For line generation, the program gets the start and end coordinates, calculates the total distance, and generates a series of points via linear interpolation. Mesh models are then instantiated on these points, and arctangent functions are used to calculate vector angles, allowing them to rotate and connect end-to-end. To solve the lag caused by generating complete lines in real-time while dragging boards, I increased the interpolation spacing during movement, creating a "dashed" following effect. The program only regenerates the high-density solid line after the mouse is released.
 
 ### 2. 运行时 3D 操作轴 / Runtime 3D Gizmos
 
-为了能在运行的游戏窗口里操作物体，我预设了一个包含 XYZ 三向平移坐标轴和三个环形旋转轴的控件组合。
-To manipulate objects within the running game window, I preset a control widget containing XYZ translation axes and three-ring rotation axes.
+为了能在游戏运行窗口中直接操作物体，我预设了一个包含 XYZ 三向平移坐标轴和三个环形旋转轴的控件组合。当使用鼠标点击选中某个电路板时，这套坐标轴会自动吸附到该物体的坐标处。程序会读取我对操作轴的拖拽输入，并将其转化为对目标物体的空间平移和旋转操作。
 
-当使用鼠标点击选中某个电路板时，这套坐标轴会瞬间移动到该物体的坐标处。
-When a circuit board is selected with a mouse click, these coordinate axes instantly move to the object's coordinates.
-
-程序会读取我对这套操作轴的拖拽输入，并将其转化为对被选中物体的空间平移、旋转操作。
-The program reads my drag inputs on these axes and translates them into spatial translation and rotation operations on the selected object.
+To manipulate objects directly within the running game window, I preset a control widget containing XYZ translation axes and three-ring rotation axes. When a circuit board is selected with a mouse click, these coordinate axes automatically snap to the object's position. The program reads the drag inputs on the axes and translates them into spatial translation and rotation operations on the target object.
 
 ### 3. 信号距离传递与材质反馈 / Signal Distance Transmission & Material Feedback
 
-我加入了一个自定义的刷新率系统来控制信号的流动。
-I added a custom tick rate system to control the flow of signals.
+场景内加入了一个自定义的刷新率系统来控制信号流动。电信号（能量数值）顺着连线生成的数组逐层传递，当传递距离超过信号本身的强度时，能量即发生耗尽。为了直观展示这一过程，我编写了材质替换函数，根据节点是否通电、是否被选中等状态，实时切换线路的渲染材质（如发光的高亮材质或断电的冰冻材质）。
 
-电信号（能量数值）会顺着连线生成的数组逐个传递，当传递距离超过信号本身的强度时，能量就会耗尽。
-Electrical signals (energy values) pass sequentially along the array generated by the connections. When the transmission distance exceeds the signal's own strength, the energy is depleted.
-
-为了直观地展示这个过程，我写了材质替换函数，根据节点是否通电、是否被选中，实时切换线路的材质（比如发光的绿色材质或断电的灰色材质）。
-To visually display this process, I wrote material replacement functions that switch the wire's material in real-time based on whether the node is powered or selected (e.g., a glowing green material or a powered-off gray material).
+A custom tick rate system was added to the scene to control signal flow. Electrical signals (energy values) pass sequentially along the array generated by the connections, and the energy is depleted when the transmission distance exceeds the signal's initial strength. To visually display this process, I wrote material replacement functions that switch the wire's rendering material in real-time (e.g., glowing highlight material or powered-off frozen material) based on whether the node is powered or selected.
 
 ---
 
 ## 🌱 开发心得 / Development Reflections
 
-通过开发这个项目，我真的学到了很多东西。
-Through developing this project, I really learned a lot.
+通过开发这个项目，我学到了非常多宝贵的工程经验。整个沙盒最初仅仅源于一个“在3D空间里连线”的简单想法，但在实际动手后，我遇到并解决了一系列关于渲染优化、空间计算和组件化架构设计的问题，一步步将其完善至今。这段经历让我深刻认识到：很多事情只要敢于去想，并朝着设定的目标不断努力追寻，最终就一定会收获一个不错的结果。
 
-整个工程最初只是源于一个非常简单的“在3D空间里连线”的想法。
-The entire project initially started from a very simple idea of "connecting wires in 3D space."
-
-但在实际动手后，我遇到并解决了一系列关于渲染优化、空间数学计算和组件化设计的问题，一步步将其完善。
-But after actually starting, I encountered and solved a series of problems regarding rendering optimization, spatial mathematical calculations, and componentized design, optimizing it step by step.
-
-这段经历让我深刻认识到：很多事情只要敢于去想，并朝着目标不断努力追寻，最终就一定会收获一个不错的结果。
-This experience made me deeply realize: for many things, as long as you dare to think and continuously pursue the goal with effort, you will definitely reap a good result in the end.
+Through developing this project, I gained a wealth of valuable engineering experience. The entire sandbox initially started from a simple idea of "connecting wires in 3D space." However, during development, I encountered and resolved a series of practical issues regarding rendering optimization, spatial calculations, and componentized architecture design, perfecting it step by step to its current state. This experience made me deeply realize: as long as you dare to think and continuously pursue your set goals with effort, you will definitely reap a rewarding result in the end.
