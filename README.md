@@ -1,4 +1,4 @@
-***
+<img width="930" height="510" alt="e8bc1fbe3167f38bdb7b1c021a3eca13" src="https://github.com/user-attachments/assets/e8424267-2909-4f67-a13f-d4652396efc5" />***
 
 <div align="center">
 
@@ -57,6 +57,7 @@ To facilitate the future extension of new circuit components, I designed a set o
 
 Based on this structure, various basic gate circuit functions can be derived, as well as custom functionalities for later packaging the computational processes of player-made integrated circuits.
 
+### The following diagram shows the system structure based on the most basic nodes：
 <div align="center">
 
 
@@ -64,13 +65,15 @@ Based on this structure, various basic gate circuit functions can be derived, as
 
 | 场景节点层级结构 / Scene Node Hierarchy | 核心组件代码挂载 / Core Component Scripts |
 | :---: | :---: |
-| <img src="替换为那张引脚、in、out、core的目录截图.png" width="380"> | <img src="替换为那张一堆与非门文件目录的截图.png" width="380"> |
+| <img src="https://github.com/user-attachments/assets/bcd408bc-c041-488b-bacb-1944f76578ca" width="380"> | <img src="https://github.com/user-attachments/assets/4885cabd-ba76-4985-b115-d88e6a96f436" width="380"> |
+
 
 </div>
 
-基于这套结构的二次开发非常便捷。当我需要制作一个新的逻辑门（例如“与非门”）时，只需复制这个基类，设定好输入输出的数量，然后在 `core` 节点下新建一个脚本写入具体的逻辑判别代码即可，完全无需重写移动和连线等底层代码。
+基于这套结构的二次开发非常便捷。当我需要制作一个新的逻辑门（例如“与非门”）时，只需复制这个基类，设定好输入输出的数量，然后在 `core` 节点下新建一个脚本写入具体的逻辑判别代码即可，完全无需重写移动和连线等底层代码。同时可以开发出很多有新意的节点，比如说灯泡就是通过二次开发的代码来反向控制材质的亮和暗来实现的。
 
-Secondary development based on this structure is extremely convenient. When I need to create a new logic gate (e.g., a "NAND gate"), I simply copy the base class, set the required number of inputs and outputs, and attach a new script under the `core` node to write the specific logic evaluation. There is absolutely no need to rewrite the underlying code for movement and wiring.
+**Secondary development based on this structure is very convenient. When I need to create a new logic gate (such as a "NAND gate"), I simply duplicate this base class, set the number of inputs and outputs, and then create a new script under the `core` node to write the specific logic evaluation code—completely without needing to rewrite underlying code for movement or connections. 
+At the same time, many innovative nodes can be developed. For example, `a light bulb` is implemented through secondary development code that inversely `controls the brightness and darkness` of its material.**
 
 ---
 
