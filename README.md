@@ -4,7 +4,7 @@
 
 # Harvard Structure
 ### 3D Interactive Logic Circuit Simulator / 3D交互式逻辑电路模拟器
-
+### [Video - BiliBili](https://www.bilibili.com/video/BV18xPszjEe8)
 **开发周期 / Development Period:** 2023.11 - 2024.03
 
 [![实机演示全景 / Gameplay Overview](https://github.com/user-attachments/assets/dacef36c-b4d3-492a-b1f3-212ce95628e8)](你的视频或项目链接)
